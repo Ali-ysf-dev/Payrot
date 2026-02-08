@@ -1,63 +1,41 @@
-function About({
-  title = "About Us",
-  subtitle = "Who We Are",
-  description = "We are a forward-thinking company dedicated to delivering exceptional solutions and outstanding service to our clients.",
-  features = [
-    {
-      title: "Innovation",
-      description: "We leverage cutting-edge technology to solve complex challenges."
-    },
-    {
-      title: "Excellence",
-      description: "We strive for perfection in every project we undertake."
-    },
-    {
-      title: "Trust",
-      description: "Building lasting relationships through transparency and reliability."
-    }
-  ]
-}) {
-  return (
-    <section className="about-section w-full py-20 px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          {subtitle && (
-            <p className="text-sm font-semibold text-indigo-600 uppercase tracking-wide mb-2">
-              {subtitle}
-            </p>
-          )}
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            {title}
-          </h2>
-          {description && (
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              {description}
-            </p>
-          )}
-        </div>
+import { useLanguage } from "../context/LanguageContext";
 
-        {/* Features Grid */}
-        {features && features.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors border border-slate-200"
+const POINT_KEYS = ["point1", "point2", "point3"];
+
+export default function About() {
+  const { t } = useLanguage();
+
+  return (
+    <section id="about" className="about-section py-20 md:py-28 px-6 bg-[#F1F6F9]">
+      <div className="max-w-4xl mx-auto">
+        <div className="flex justify-center mb-4">
+          <div className="section-accent" />
+        </div>
+        <p className="about-badge text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-3 text-center">
+          {t("about.badge")}
+        </p>
+        <h2 className="about-title text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 text-center tracking-tight">
+          {t("about.title")}
+        </h2>
+        <div className="bg-white rounded-2xl shadow-sm border border-slate-200/60 p-8 md:p-10">
+          <p className="about-text text-slate-600 text-lg leading-relaxed mb-8">
+            {t("about.text")}
+          </p>
+          <ul className="about-list flex flex-wrap gap-4 md:gap-6">
+            {POINT_KEYS.map((key) => (
+              <li
+                key={key}
+                className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200/60"
               >
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
+                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500 text-white text-sm font-bold">
+                  ✓
+                </span>
+                <span className="text-slate-700 font-medium">{t(`about.${key}`)}</span>
+              </li>
             ))}
-          </div>
-        )}
+          </ul>
+        </div>
       </div>
     </section>
-  )
+  );
 }
-
-export default About

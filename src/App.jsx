@@ -1,16 +1,29 @@
-import './App.css'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
+import "./App.css";
+import { useScrollAnimations } from "./useScrollAnimations";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Services from "./components/Services";
+import Reviews from "./components/Reviews";
+import ContactUs from "./components/ContactUs";
+import Footer from "./components/Footer";
 
 function App() {
+  useScrollAnimations();
+
   return (
     <>
       <Navbar />
-      <Hero />
-      <About />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Reviews />
+        <ContactUs />
+      </main>
+      <Footer />
     </>
-  )
+  );
 }
 
 export default App;

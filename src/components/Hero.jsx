@@ -1,56 +1,62 @@
-function Hero({ 
-  title = "Welcome to PAYROT",
-  subtitle = "Your trusted partner for innovative solutions",
-  description = "We deliver excellence through cutting-edge technology and exceptional service.",
-  primaryButtonText = "Get Started",
-  secondaryButtonText = "Learn More",
-  onPrimaryClick,
-  onSecondaryClick
-}) {
+import heroImage from "../assets/tornEuro.png";
+import { useLanguage } from "../context/LanguageContext";
+
+export default function Hero() {
+  const { t } = useLanguage();
+
   return (
-    <section className=" hero-section relative w-full min-h-[110vh] flex items-center justify-center px-6 py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      <div className="max-w-4xl mx-auto text-center">
-        {/* Main Heading */}
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-          {title}
+    <section
+      id="hero"
+      className="relative min-h-screen flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 px-6 pt-24 pb-16 overflow-hidden bg-white"
+    >
+      <div className="relative z-10 flex-1 max-w-md text-left order-2 md:order-1 lg:translate-x-[30%] lg:-translate-y-[40%]">
+        <span className="hero-badge inline-block px-4 py-1.5 rounded-full bg-slate-100 text-slate-600 text-xs font-medium uppercase tracking-wider mb-4 border border-slate-200">
+          {t("hero.badge")}
+        </span>
+        <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-3 leading-tight tracking-tight">
+          {t("hero.titleLeft")}
         </h1>
+        <p className="hero-subtitle text-slate-600 text-base md:text-lg mb-6">
+          {t("hero.subtitleLeft1")}
+          <br />
+          {t("hero.subtitleLeft2")}
+        </p>
+        <div className="hero-cta flex flex-wrap gap-3">
+          <a
+            href="#contact"
+            className="px-6 py-3 bg-slate-900 text-white font-semibold rounded-xl hover:bg-slate-800 hover:scale-[1.02] active:scale-100 transition-all duration-200 shadow-lg hover:shadow-xl text-sm"
+          >
+            {t("hero.ctaBook")}
+          </a>
+        </div>
+      </div>
 
-        {/* Subtitle */}
-        {subtitle && (
-          <h2 className="text-2xl md:text-3xl text-white/80 mb-4 font-medium">
-            {subtitle}
-          </h2>
-        )}
+      <div className="relative z-10 shrink-0 order-1 md:order-2">
+        <div className="relative max-w-[280px] sm:max-w-[320px] md:max-w-[360px] mx-auto">
+          <img
+            src={heroImage}
+            alt={t("hero.imgAlt")}
+            className="w-full h-auto object-cover block"
+          />
+        </div>
+      </div>
 
-        {/* Description */}
-        {description && (
-          <p className="text-lg md:text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
-            {description}
-          </p>
-        )}
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          {primaryButtonText && (
-            <button
-              onClick={onPrimaryClick}
-              className="px-8 py-4 bg-white text-slate-900 font-semibold rounded-lg hover:bg-white/90 transition-all transform hover:scale-105 shadow-lg"
-            >
-              {primaryButtonText}
-            </button>
-          )}
-          {secondaryButtonText && (
-            <button
-              onClick={onSecondaryClick}
-              className="px-8 py-4 bg-transparent border-2 border-white/30 text-white font-semibold rounded-lg hover:border-white/50 hover:bg-white/10 transition-all"
-            >
-              {secondaryButtonText}
-            </button>
-          )}
+      <div className="relative z-10 flex-1 max-w-md text-right order-3 md:order-3 lg:-translate-x-[40%] lg:translate-y-[40%]">
+        <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-3 leading-tight tracking-tight">
+          {t("hero.titleRight")}
+        </h1>
+        <p className="hero-subtitle text-slate-600 text-base md:text-lg mb-6">
+          {t("hero.subtitleRight")}
+        </p>
+        <div className="hero-cta flex flex-wrap gap-3 justify-end">
+          <a
+            href="#services"
+            className="px-6 py-3 border-2 border-slate-300 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 hover:border-slate-400 hover:scale-[1.02] active:scale-100 transition-all duration-200 text-sm"
+          >
+            {t("hero.ctaServices")}
+          </a>
         </div>
       </div>
     </section>
-  )
+  );
 }
-
-export default Hero

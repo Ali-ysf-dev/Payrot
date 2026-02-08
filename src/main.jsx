@@ -1,12 +1,10 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
+import { LanguageProvider } from "./context/LanguageContext.jsx";
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <main style={{ width: '100%', height: '100%' }}>
-      <App />
-    </main>
-  </StrictMode>,
-)
+createRoot(document.getElementById("root")).render(
+  <LanguageProvider>
+    <App />
+  </LanguageProvider>
+);
