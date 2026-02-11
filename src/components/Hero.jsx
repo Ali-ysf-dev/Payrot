@@ -1,4 +1,6 @@
 import heroImage from "../assets/tornEuro.png";
+import dollarImage from "../assets/dollar.jpeg";
+import torn50 from "../assets/torn50.png";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function Hero() {
@@ -7,9 +9,23 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 px-6 pt-24 pb-16 overflow-hidden bg-white"
+      className="relative min-h-screen flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 px-6 pt-24 pb-16 overflow-hidden bg-[#FEFEFE]"
     >
-      <div className="relative z-10 flex-1 max-w-md text-left order-2 md:order-1 lg:translate-x-[30%] lg:-translate-y-[40%]">
+      {/* Decorative dollar image - bottom left on large screens 
+      <img
+        src={dollarImage}
+        alt=""
+        className="hidden lg:block absolute bottom-0 left-35 z-0 w-[320px] xl:w-[360px] h-auto object-contain object-bottom-left pointer-events-none"
+        aria-hidden
+      />*/}
+      {/* Decorative torn50 image - top right on large screens
+      <img
+        src={torn50}
+        alt=""
+        className="hidden lg:block absolute top-0 right-35 z-0 w-[280px] xl:w-[320px] h-auto object-contain object-top-right pointer-events-none"
+        aria-hidden
+      />*/}
+      <div className="relative z-10 flex-1 max-w-md text-left order-1 md:order-1 lg:translate-x-[30%] lg:-translate-y-[35%]">
         <span className="hero-badge inline-block px-4 py-1.5 rounded-full bg-slate-100 text-slate-600 text-xs font-medium uppercase tracking-wider mb-4 border border-slate-200">
           {t("hero.badge")}
         </span>
@@ -31,7 +47,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative z-10 shrink-0 order-1 md:order-2">
+      <div className="relative z-10 shrink-0 order-2 md:order-2">
         <div className="relative max-w-[280px] sm:max-w-[320px] md:max-w-[360px] mx-auto">
           <img
             src={heroImage}
@@ -41,7 +57,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative z-10 flex-1 max-w-md text-right order-3 md:order-3 lg:-translate-x-[40%] lg:translate-y-[40%]">
+      <div className="relative z-10 flex-1 max-w-md text-right order-3 md:order-3 lg:-translate-x-[30%] lg:translate-y-[40%]">
         <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-3 leading-tight tracking-tight">
           {t("hero.titleRight")}
         </h1>

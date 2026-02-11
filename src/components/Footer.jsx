@@ -1,4 +1,5 @@
 import { useLanguage } from "../context/LanguageContext";
+import logo from "../assets/logo.png";
 
 const LINK_KEYS = [
   { key: "about", href: "#about" },
@@ -11,16 +12,19 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+    <footer className="bg-linear-to-b from-slate-900 via-slate-800 to-slate-900">
       <div className="max-w-6xl mx-auto px-6 py-12 md:py-14">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-          <div>
-            <a href="#" className="text-white font-bold text-xl tracking-tight">
-              PAYROT
-            </a>
-            <p className="text-white/70 text-sm mt-2 max-w-xs">
-              {t("footer.tagline")}
-            </p>
+          <div className="flex items-center gap-3">
+            <img src={logo} alt="Payrot" className="footer-logo h-10 w-auto object-contain" />
+            <div>
+              <a href="#" className="text-white font-bold text-xl tracking-tight">
+                PAYROT
+              </a>
+              <p className="text-white/70 text-sm mt-2 max-w-xs">
+                {t("footer.tagline")}
+              </p>
+            </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-8 sm:gap-12">
             <div>

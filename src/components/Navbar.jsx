@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
+import logo from "../assets/logo.png";
 
 const LINK_KEYS = [
   { key: "about", href: "#about" },
@@ -12,11 +13,12 @@ export default function Navbar() {
   const { lang, setLang, t } = useLanguage();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm py-5">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm py-3">
       <div className="max-w-6xl mx-auto flex items-center px-4 md:px-6 relative">
         {/* Left: logo */}
         <div className="flex-1 flex justify-start min-w-0">
-          <a href="#" className="font-bold text-xl tracking-tight text-slate-900">
+          <a href="#" className="flex items-center gap-2 font-bold text-xl tracking-tight text-slate-900">
+            <img src={logo} alt="Payrot" className="h-8 w-auto object-contain" />
             PAYROT
           </a>
         </div>

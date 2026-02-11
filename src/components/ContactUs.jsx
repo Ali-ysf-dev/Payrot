@@ -4,9 +4,9 @@ export default function ContactUs() {
   const { t } = useLanguage();
 
   return (
-    <section id="contact" className="contact-section py-20 md:py-28 px-6 bg-[#F1F6F9]">
+    <section id="contact" className="contact-section py-20 md:py-28 px-6 bg-[#FEFEFE]">
       <div className="max-w-2xl mx-auto">
-        <div className="bg-white rounded-2xl shadow-lg border border-slate-200/60 p-8 md:p-12 text-center">
+        <div className="bg-white rounded-2xl border border-slate-200/60 p-8 md:p-12 text-center">
           <div className="flex justify-center mb-4">
             <div className="section-accent" />
           </div>
