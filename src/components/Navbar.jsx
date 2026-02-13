@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.svg";
 
 const LINK_KEYS = [
   { key: "about", href: "#about" },
@@ -17,9 +17,8 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto flex items-center px-4 md:px-6 relative">
         {/* Left: logo */}
         <div className="flex-1 flex justify-start min-w-0">
-          <a href="#" className="flex items-center gap-2 font-bold text-xl tracking-tight text-[#FEA201]">
-            <img src={logo} alt="Payrot" className="h-8 w-auto object-contain" />
-            PAYROT
+          <a href="#" className="flex items-center gap-2 font-bold text-xl tracking-tight text-slate-900">
+            <img src={logo} alt="Payrot" className="h-8 w-auto object-contain invert" />
           </a>
         </div>
         {/* Center: nav links - equal flex on both sides keeps them centered */}
