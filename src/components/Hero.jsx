@@ -1,6 +1,6 @@
-import heroImage from "../assets/tornEuro.png";
+import heroImage from "../assets/tornEuro.avif";
 import dollarImage from "../assets/dollar.jpeg";
-import torn50 from "../assets/torn50.png";
+import torn50 from "../assets/torn50.avif";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function Hero() {
@@ -67,7 +67,7 @@ export default function Hero() {
         <div className="hero-cta flex flex-wrap gap-3 justify-end">
           <a
             href="#services"
-            className="px-6 py-3 border-2 border-slate-300 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 hover:border-slate-400 hover:scale-[1.02] active:scale-100 transition-all duration-200 text-sm"
+            className="bg-emerald-500 px-6 py-3 border-2 text-white font-semibold rounded-xl  hover:scale-[1.03] active:scale-100 transition-all duration-200 text-sm"
           >
             {t("hero.ctaServices")}
           </a>
