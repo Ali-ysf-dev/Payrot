@@ -1,4 +1,5 @@
 import { useLanguage } from "../context/LanguageContext";
+import notesEuro from "../assets/noteseuro.png";
 
 const REVIEW_KEYS = [
   { key: "1", name: "Sarah M.", initial: "S" },
@@ -18,15 +19,25 @@ export default function Reviews() {
   const { t } = useLanguage();
 
   return (
-    <section id="reviews" className="reviews-section py-20 md:py-28 px-6 bg-slate-50">
-      <div className="max-w-5xl mx-auto">
+    <section
+      id="reviews"
+      className="reviews-section py-20 md:py-28 px-6 relative"
+      style={{
+        backgroundImage: `url(${notesEuro})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="absolute inset-0 bg-slate-900/60" />
+      <div className="max-w-5xl mx-auto relative z-10">
         <div className="flex justify-center mb-4">
           <div className="section-accent" />
         </div>
-        <p className="reviews-badge text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-3 text-center">
+        <p className="reviews-badge text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-3 text-center">
           {t("reviews.badge")}
         </p>
-        <h2 className="reviews-title text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 text-center mb-12 tracking-tight">
+        <h2 className="reviews-title text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-12 tracking-tight">
           {t("reviews.title")}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
